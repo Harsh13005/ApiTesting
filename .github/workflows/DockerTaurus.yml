@@ -18,4 +18,5 @@ jobs:
       - name: Run TaurusJmeter Test
         run: |
           pwd
-          ls
+          bzt CompetitorsByDriveTimeControllerApi.yaml
+          echo "LoadTest Started"
