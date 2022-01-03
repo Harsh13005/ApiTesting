@@ -1,0 +1,19 @@
+name: DockerYML
+on: [push]
+
+#on: 
+#  Schedule:
+#  - cron: "4 "
+
+#on: 
+#  self-hosted
+
+jobs:
+  node-docker:
+    runs-on: ubuntu-latest
+    container:
+      image: blazemeter/taurus:latest
+    steps:
+      - name: Run Taurus Test
+        run: |
+          pwd
