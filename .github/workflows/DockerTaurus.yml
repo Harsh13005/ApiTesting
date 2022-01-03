@@ -20,3 +20,10 @@ jobs:
           pwd
           bzt CompetitorsByDriveTimeControllerApi.yaml
           echo "LoadTest Started"
+          
+      - name: Upload Results
+      - uses: actions/upload-artifact@v2
+        with:
+          name: jmeter-results
+          path: result.jtl
+
