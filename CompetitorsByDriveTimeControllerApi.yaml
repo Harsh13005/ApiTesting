@@ -5,15 +5,15 @@ execution:
       script: CompetitorsByDriveTimeControllerApi.jmx
       properties:
         rampup: 3
-        duration: 600
+        duration: 60
         port: 443
         nextuihost: nextstage.kroger.com
         testCases: 120
         endpoint:
           getCompetitorsByDriveTime:
-            tph: 120
+            tph: 12
             threads: 1
-            iterations: 120
+            iterations: 12
 
       modifications:
         disable:
