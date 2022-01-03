@@ -1,0 +1,41 @@
+---
+execution:
+  - executor: jmeter
+    scenario:
+      script: CompetitorsByDriveTimeControllerApi.jmx
+      properties:
+        rampup: 3
+        duration: 600
+        port: 443
+        nextuihost: nextstage.kroger.com
+        testCases: 120
+        endpoint:
+          getCompetitorsByDriveTime:
+            tph: 120
+            threads: 1
+            iterations: 120
+
+      modifications:
+        disable:
+          - "Debug Sampler"
+          - "View Results Tree"
+          
+        enable:
+          - "Thread Group : Setup : Authentication"
+          - "Thread Group*"
+        set-prop: # Set element properties, selected as [Element Name]>[property name]
+          "HTTP Sampler>HTTPSampler.connect_timeout": "0"
+          "HTTP Sampler>HTTPSampler.protocol": "https"
+          "xThread Group Endpoint - getCompetitorsByDriveTime>ThreadGroup.num_threads": 9
+
+reporting:
+  - module: final-stats
+    test-duration: true
+    percentiles: true
+    summary: true
+    dump-csv: report.csv
+  - console
+
+
+#included-configs:
+#  - custom-jmeter-properties.yml
