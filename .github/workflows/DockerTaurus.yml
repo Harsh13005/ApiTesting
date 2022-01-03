@@ -14,6 +14,7 @@ jobs:
     container:
       image: blazemeter/taurus:latest
     steps:
+      - uses: actions/checkout@v2
       - name: Run TaurusJmeter Test
         run: |
           pwd
