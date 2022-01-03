@@ -14,6 +14,7 @@ jobs:
     container:
       image: blazemeter/taurus:latest
     steps:
-      - name: Run Taurus Test
+      - name: Run TaurusJmeter Test
         run: |
           pwd
+          bzt CompetitorsByDriveTimeControllerApi.jmx
