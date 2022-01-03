@@ -17,4 +17,4 @@ jobs:
       - name: Run TaurusJmeter Test
         run: |
           pwd
-          bzt ./CompetitorsByDriveTimeControllerApi.jmx
+          bzt CompetitorsByDriveTimeControllerApi.yaml
